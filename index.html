@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Iniciar Sesión</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar con logo y enlaces -->
+        <nav>
+            <a href="#"><img src="images/logo.png" alt="Netflix"></a>
+            <div class="nav-links">
+                <a href="#">Inicio</a>
+                <a href="#">Planes</a>
+                <a href="#">Ayuda</a>
+            </div>
+        </nav>
+
+        <!-- Formulario de inicio de sesión -->
+        <div class="form-wrapper">
+            <div class="corner-badge">Premium</div>
+            <h2>Iniciar sesión</h2>
+            <p class="subtitle">Bienvenido de nuevo a Netflix</p>
+            
+            <form action="#">
+                <div class="form-control">
+                    <input type="email" required>
+                    <label>Email o número de teléfono</label>
+                </div>
+                
+                <div class="form-control">
+                    <input type="password" required>
+                    <label>Contraseña</label>
+                </div>
+                
+                <button type="submit">Iniciar sesión <i class="fas fa-arrow-right"></i></button>
+                
+                <div class="form-help">
+                    <label class="custom-checkbox">
+                        Recuérdame
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <a href="#">¿Necesitas ayuda?</a>
+                </div>
+            </form>
+            
+            <p>¿Primera vez en Netflix? <a href="#">Suscríbete ahora</a>.</p>
+            
+            <small>Esta página está protegida por Google reCAPTCHA para comprobar que no eres un robot. <a href="#">Más información</a>.</small>
+            
+            <!-- Opciones de inicio de sesión social -->
+            <div class="social-login">
+                <p>O inicia sesión con</p>
+                <div class="social-icons">
+                    <button><i class="fab fa-google"></i></button>
+                    <button><i class="fab fa-facebook-f"></i></button>
+                    <button><i class="fab fa-apple"></i></button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Netflix, Inc. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
