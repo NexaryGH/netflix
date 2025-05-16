@@ -60,6 +60,7 @@ body::before {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 /* Header/Navbar */
@@ -94,10 +95,13 @@ nav a img:hover {
     font-size: 1rem;
     font-weight: 500;
     transition: var(--transition);
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
 }
 
 .nav-links a:hover {
     color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Form wrapper */
@@ -223,6 +227,15 @@ form button:hover:before {
 
 form button:active {
     transform: translateY(1px);
+}
+
+form button i {
+    margin-left: 8px;
+    transition: var(--transition);
+}
+
+form button:hover i {
+    transform: translateX(5px);
 }
 
 /* Help section */
@@ -404,17 +417,91 @@ form .remember-me {
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    position: absolute;
-    bottom: 0;
     width: 100%;
     color: var(--text-secondary);
-    font-size: 0.8rem;
+    padding: 30px 60px;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--text-color);
+}
+
+/* Desktop-specific enhancements */
+@media (min-width: 1024px) {
+    .form-wrapper {
+        width: 450px;
+        margin: auto;
+        transform: scale(1);
+    }
+    
+    .form-wrapper:hover {
+        transform: translateY(-5px) scale(1.02);
+    }
+    
+    /* Button animation for desktop */
+    form button i {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    
+    form button:hover i {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    /* Enhanced navbar for desktop */
+    .nav-links {
+        gap: 25px;
+    }
+    
+    .nav-links a {
+        position: relative;
+    }
+    
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        left: 15px;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary-color);
+        transition: var(--transition);
+    }
+    
+    .nav-links a:hover::after {
+        width: calc(100% - 30px);
+    }
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
     nav {
         padding: 20px;
     }
@@ -443,6 +530,11 @@ footer {
         align-items: flex-start;
         gap: 10px;
     }
+    
+    footer {
+        position: relative;
+        padding: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -453,5 +545,9 @@ footer {
     .social-icons button {
         width: 40px;
         height: 40px;
+    }
+    
+    .footer-links {
+        gap: 10px;
     }
 }
